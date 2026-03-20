@@ -1,0 +1,257 @@
+:root {
+    --color-accent: #C92440; /* Ошибки, важные кнопки */
+    --color-warning: #FFC240; /* Предупреждения */
+    --color-success: #A0D7C7; /* Успех, фон результатов */
+    --color-text: #333;
+    --color-bg: #f9f9f9;
+    --font-main: sans-serif;
+    --radius: 12px;
+    --spacing: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    padding-bottom: 40px;
+}
+
+header {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+nav a:hover {
+    opacity: 0.9;
+}
+
+nav a.active {
+    background-color: var(--color-accent);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px; /* Крупный шрифт для мобильных */
+    border: 2px solid #ddd;
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #2c3e50;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: var(--radius);
+}
+
+.radio-label input {
+    width: auto;
+}
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2c3e50;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+    min-height: 44px;
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+}
+
+.btn-success {
+    background-color: #27ae60;
+}
+
+.btn:hover {
+    opacity: 0.95;
+}
+
+.result-box {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: var(--radius);
+    display: none; /* Скрыто по умолчанию */
+}
+
+.result-box.success {
+    display: block;
+    background-color: var(--color-success);
+    border: 1px solid #8bc3a8;
+    color: #004d40;
+}
+
+.result-box.error {
+    display: block;
+    background-color: #ffebee;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+.result-box.warning {
+    display: block;
+    background-color: #fff8e1;
+    border: 1px solid var(--color-warning);
+    color: #bfa000;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f1f1f1;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Journal Styles */
+.journal-entry {
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: var(--radius);
+    background: #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.journal-entry:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.journal-date {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.journal-type {
+    font-weight: bold;
+    color: #2c3e50;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.journal-details {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+    font-size: 0.95rem;
+}
+
+@media (min-width: 600px) {
+    .btn {
+        width: auto;
+        min-width: 200px;
+    }
+    
+    .radio-group {
+        flex-direction: row;
+    }
+}

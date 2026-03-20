@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Журнал расчётов</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📋 Журнал расчётов</h1>
+        <nav>
+            <a href="index.html">Ввод данных</a>
+            <a href="milk.html">Молоко</a>
+            <a href="separation.html">Сепарирование</a>
+            <a href="cottagecheese.html">Творог</a>
+            <a href="cheese.html">Сыр</a>
+            <a href="journal.html" class="active">Журнал</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h2>История операций</h2>
+                <button id="clearBtn" class="btn btn-accent" style="width:auto; padding:10px 20px; font-size:14px;">Очистить журнал</button>
+            </div>
+            
+            <div id="journalList">
+                <!-- Записи будут здесь -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

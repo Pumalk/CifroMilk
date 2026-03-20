@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нормализация молока - Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🥛 Нормализация молока для КФХ</h1>
+        <nav>
+            <a href="index.html" class="active">Ввод данных</a>
+            <a href="milk.html">Молоко</a>
+            <a href="separation.html">Сепарирование</a>
+            <a href="cottagecheese.html">Творог</a>
+            <a href="cheese.html">Сыр</a>
+            <a href="journal.html">Журнал</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Исходные данные о молоке</h2>
+            <p style="margin-bottom: 20px; color: #666;">Введите параметры вашей партии цельного молока. Эти данные будут использованы во всех расчётах.</p>
+            
+            <form id="milkForm">
+                <div class="form-group">
+                    <label for="volume">Объём цельного молока (л) *</label>
+                    <input type="number" id="volume" step="0.1" required placeholder="Например: 100">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fat">Жирность молока (%) *</label>
+                    <input type="number" id="fat" step="0.01" required placeholder="Например: 3.8">
+                </div>
+
+                <div class="form-group">
+                    <label for="density">Плотность молока (кг/л)</label>
+                    <input type="number" id="density" step="0.001" value="1.030" placeholder="1.030">
+                </div>
+
+                <div class="form-group">
+                    <label for="protein">Содержание белка (%) <small>(для сыра/творога)</small></label>
+                    <input type="number" id="protein" step="0.01" placeholder="Например: 3.2">
+                </div>
+
+                <button type="submit" class="btn btn-accent">Сохранить исходные данные</button>
+            </form>
+
+            <div id="resultBox" class="result-box"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

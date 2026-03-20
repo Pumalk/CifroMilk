@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Питьевое молоко</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🥛 Питьевое молоко</h1>
+        <nav>
+            <a href="index.html">Ввод данных</a>
+            <a href="milk.html" class="active">Молоко</a>
+            <a href="separation.html">Сепарирование</a>
+            <a href="cottagecheese.html">Творог</a>
+            <a href="cheese.html">Сыр</a>
+            <a href="journal.html">Журнал</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Расчёт нормализации</h2>
+            
+            <div class="form-group radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="milkType" value="whole" checked> Отборное (без изменения жирности)
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="milkType" value="normalized"> Нормализованное
+                </label>
+            </div>
+
+            <div id="normalizationSettings" class="hidden">
+                <div class="form-group">
+                    <label for="targetFatSelect">Целевая жирность</label>
+                    <select id="targetFatSelect">
+                        <option value="3.2">3.2%</option>
+                        <option value="2.5">2.5%</option>
+                        <option value="1.5">1.5%</option>
+                        <option value="custom">Своя жирность...</option>
+                    </select>
+                    <input type="number" id="customFatInput" class="hidden" step="0.1" placeholder="Введите жирность %" style="margin-top: 10px;">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="losses">Потери при обработке (%)</label>
+                <input type="number" id="losses" value="0" step="0.1">
+            </div>
+
+            <button id="calcBtn" class="btn">Рассчитать</button>
+            <button id="saveJournalBtn" class="btn btn-success" style="display:none; margin-top:10px;">Сохранить в журнал</button>
+
+            <div id="resultBox" class="result-box"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Дополнительный скрипт для переключения видимости
+        document.querySelectorAll('input[name="milkType"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                const settings = document.getElementById('normalizationSettings');
+                if (e.target.value === 'normalized') {
+                    settings.classList.remove('hidden');
+                } else {
+                    settings.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
